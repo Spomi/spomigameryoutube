@@ -44,7 +44,11 @@ client.channels.find('id', '469336127254298625').setName("Welcome To MA");
 client.channels.find('id', '469471231427477505').setName("Welcome To MAR");
 client.channels.find('id', '469471231427477505').setName("Welcome To MARO");
 client.channels.find('id', '469471231427477505').setName("Welcome To MAROC");
+client.channels.find('id', '469471231427477505').setName("Welcome To MAROC ");
+client.channels.find('id', '469471231427477505').setName("Welcome To MAROC G");
+client.channels.find('id', '469471231427477505').setName("Welcome To MAROC GA");
 client.channels.find('id', '469471231427477505').setName("Welcome To MAROC GAM");
+client.channels.find('id', '469471231427477505').setName("Welcome To MAROC GAME");
 client.channels.find('id', '469471231427477505').setName("Welcome To MAROC GAMER");
 }, 3000);
  
