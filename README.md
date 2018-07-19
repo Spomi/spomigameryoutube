@@ -1,2 +1,1 @@
-# hshdhdhijoaovagghbsiycfwuv
-iG:Spomi.yt
+hshdhdhijoaovagghbsiycfwuv
