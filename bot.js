@@ -28,4 +28,32 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
   console.log('')
 });
 
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '469336127254298625').setName("W");
+client.channels.find('id', '469336127254298625').setName("We");
+client.channels.find('id', '469336127254298625').setName("Wel");
+client.channels.find('id', '469336127254298625').setName("Welc");
+client.channels.find('id', '469336127254298625').setName("Welco");
+client.channels.find('id', '469336127254298625').setName("Welcom");
+client.channels.find('id', '469336127254298625').setName("Welcome");
+client.channels.find('id', '469336127254298625').setName("Welcome T");
+client.channels.find('id', '469336127254298625').setName("Welcome To");
+client.channels.find('id', '469336127254298625').setName("Welcome To M");
+client.channels.find('id', '469336127254298625').setName("Welcome To MA");
+client.channels.find('id', '469336127254298625').setName("Welcome To MAR");
+client.channels.find('id', '469336127254298625').setName("Welcome To MARO");
+client.channels.find('id', '469336127254298625').setName("Welcome To MAROC");
+client.channels.find('id', '469336127254298625').setName("Welcome To MAROC GAM");
+client.channels.find('id', '469336127254298625').setName("Welcome To MAROC GAMER");
+}, 3000);
+ 
+});
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
