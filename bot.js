@@ -39,6 +39,7 @@ client.channels.find('id', '469471231427477505').setName("Welcom");
 client.channels.find('id', '469471231427477505').setName("Welcome");
 client.channels.find('id', '469471231427477505').setName("Welcome T");
 client.channels.find('id', '469471231427477505').setName("Welcome To");
+client.channels.find('id', '469471231427477505').setName("Welcome To ");
 client.channels.find('id', '469471231427477505').setName("Welcome To S");
 client.channels.find('id', '469336127254298625').setName("Welcome To SE");
 client.channels.find('id', '469471231427477505').setName("Welcome To SER");
