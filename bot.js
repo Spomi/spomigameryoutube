@@ -29,7 +29,7 @@ client.user.setGame(`×help`,"http://twitch.tv/S-F")
 });
 
                       
-        
+      
  
 client.on('message', message => {
     if (message.content.startsWith("×avatar")) {
