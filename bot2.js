@@ -69,11 +69,33 @@ client.on('message',async Epic => {
 });
 
 
+client.on('message', message => {
+            if (message.content.startsWith(prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **%invite** ' ,' ** For add Bot ** ')
+.addField('     **%voicelive**  ' ,' **For know Who is in Voice call ** ')
+.addField('     **To add Bot Click 👉** ' ,' ** https://discordapp.com/oauth2/authorize?&client_id=468775148217040921&scope=bot&permissions=12659727 ** ')
+
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
-
-
+client.on('message', message => {
+     if (message.content === "+invite") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | Up" , " |  Look private 😉🌸")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
