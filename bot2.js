@@ -76,7 +76,7 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 :earth_africa: The Public Commands :earth_africa: 
 %voicelive  <----- To Show Number peaple in voice chanels
-
+%image      <----- For Show your image account 
 %invite     <-----  Commend To add Bot or 👇 click in Thes Link 👇
 https://discordapp.com/oauth2/authorize?&client_id=468775148217040921&scope=bot&permissions=12659727
 
