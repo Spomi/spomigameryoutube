@@ -70,17 +70,58 @@ client.on('message',async Epic => {
 
 
 client.on('message', message => {
-            if (message.content.startsWith(prefix + "help")) {
-     let embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)
-.addField('     **%invite** ' ,' ** For add Bot Commend 👆** ')
-.addField('     **%voicelive**  ' ,' **For know Who is in Voice call👆 ** ')
-.addField('     **To add Bot Click 👇** ' ,' ** https://discordapp.com/oauth2/authorize?&client_id=468775148217040921&scope=bot&permissions=12659727 ** ')
+if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
+    let pages = [`
+	
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+:earth_africa: The Public Commands :earth_africa: 
+%voicelive  <----- To Show who is in voice chanels
+%invite     <-----  Commend To add Bot or 👇 click in Thes Link 👇
+https://discordapp.com/oauth2/authorize?&client_id=468775148217040921&scope=bot&permissions=12659727
 
-.setColor('#7d2dbe')
-  message.channel.sendEmbed(embed);
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+   `]
+    let page = 1;
+
+    let embed = new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setFooter(`Page ${page} of ${pages.length}`)
+    .setDescription(pages[page-1])
+
+    message.author.sendEmbed(embed).then(msg => {
+
+        msg.react('◀').then( r => {
+            msg.react('▶')
+
+
+        const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀' && user.id === message.author.id;
+        const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶' && user.id === message.author.id;
+
+
+        const backwards = msg.createReactionCollector(backwardsFilter, { time: 2000000});
+        const forwards = msg.createReactionCollector(forwardsFilter, { time: 2000000});
+
+
+
+        backwards.on('collect', r => {
+            if (page === 1) return;
+            page--;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        forwards.on('collect', r => {
+            if (page === pages.length) return;
+            page++;
+            embed.setDescription(pages[page-1]);
+            embed.setFooter(`Page ${page} of ${pages.length}`);
+            msg.edit(embed)
+        })
+        })
+    })
     }
-});
+}); 
+
 
 
 
