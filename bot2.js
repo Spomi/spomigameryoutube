@@ -140,7 +140,7 @@ client.on('message', message => {
 });
 
 
-var userData = {};
+
 client.on("message", function(message){
 if (message.content.startsWith(prefix + "rank")) {
     if (!userData[message.author.id]) {
