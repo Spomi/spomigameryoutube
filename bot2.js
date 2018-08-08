@@ -174,4 +174,7 @@ userData[message.author.id].Xp+= 0.25;
 userData[message.author.id].Money+= 0.25;
  
 });
+
+
+
 client.login(process.env.BOT2_TOKEN);
