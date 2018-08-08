@@ -141,39 +141,7 @@ client.on('message', message => {
 
 
 
-client.on("message", function(message){
-if (message.content.startsWith(prefix + "rank")) {
-    if (!userData[message.author.id]) {
-        userData[message.author.id] = {Money:0,Xp:0,Level:0}
-    }
-     var mentionned = message.mentions.users.first();
- 
-      var epic;
-      if(mentionned){
-          var epic = mentionned;
-      } else {
-          var epic = message.author;
- 
-      }
- 
-   
-    var CulLevel = Math.floor(0.25 * Math.sqrt(userData[message.author.id].Xp +1));
-    if (CulLevel > userData[message.author.id].Level) {userData[message.author.id].Level +=CulLevel}
-    let epic = new Discord.RichEmbed()
-    .setColor("Random")
-    .addField("name :", message.author.tag)
-    .addField("Level :", userData[message.author.id].Level)
-    .addField("Xp :",Math.floor(userData[message.author.id].Xp))
-    message.channel.send(epic);
-}
-if (!userData[message.author.id]) {
-    userData[message.author.id] = {Money:0,Xp:0,Level:0,Like:0}
-    }
- 
-userData[message.author.id].Xp+= 0.25;
-userData[message.author.id].Money+= 0.25;
- 
-});
+
 
 
 
