@@ -127,7 +127,7 @@ https://discordapp.com/oauth2/authorize?&client_id=468775148217040921&scope=bot&
 
 
 client.on('message', message => {
-     if (message.content === "+invite") {
+     if (message.content === "%invite") {
      let embed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
   .setColor("#9B59B6")
@@ -185,7 +185,7 @@ client.on('message', msg => {
 client.on('message', message => {
             if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('.bcall')){
+if (message.content.startsWith('%bcall')){
  if(!message.author.id === '281762317522305024') return;
 message.channel.sendMessage(' جار ارسال الرسالة | ✅')
 client.users.forEach(m =>{
