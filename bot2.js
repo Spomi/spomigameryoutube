@@ -182,5 +182,18 @@ client.on('message', msg => {
   })
 
 
+client.on('message', message => {
+            if(!message.channel.guild) return;
+let args = message.content.split(' ').slice(1).join(' ');
+if (message.content.startsWith('.bcall')){
+ if(!message.author.id === '281762317522305024') return;
+message.channel.sendMessage(' جار ارسال الرسالة | ✅')
+client.users.forEach(m =>{
+m.sendMessage(args)
+})
+}
+});
+
+
 
 client.login(process.env.BOT2_TOKEN);
