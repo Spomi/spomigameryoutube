@@ -1,176 +1,82 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '×'
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`×help`,"http://twitch.tv/S-F")
-  console.log('')
-  console.log('')
-  console.log('╔[═════════════════════════════════════════════════════════════════]╗')
-  console.log(`[Start] ${new Date()}`);
-  console.log('╚[═════════════════════════════════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════════════════════════════]╗');
-  console.log(`Logged in as * [ " ${client.user.username} " ]`);
-  console.log('')
-  console.log('Informations :')
-  console.log('')
-  console.log(`servers! [ " ${client.guilds.size} " ]`);
-  console.log(`Users! [ " ${client.users.size} " ]`);
-  console.log(`channels! [ " ${client.channels.size} " ]`);
-  console.log('╚[════════════════════════════════════]╝')
-  console.log('')
-  console.log('╔[════════════]╗')
-  console.log(' Bot Is Online')
-  console.log('╚[════════════]╝')
-  console.log('')
-  console.log('')
-});
-
-                      
-      
- 
-client.on('message', message => {
-    if (message.content.startsWith("×avatar")) {
-        var mentionned = message.mentions.users.first();
-    var x5bzm;
-      if(mentionned){
-          var x5bzm = mentionned;
-      } else {
-          var x5bzm = message.author;
-          
-      }
-        const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setImage(`${x5bzm.avatarURL}`)
-      message.channel.sendEmbed(embed);
-    }
-});
-
-  
-
+const prefix = 'S'
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 });
-/*جميع الحقوق محفوظهه لريبل ولسيرفر كودز
-رآح يرسل للأونر تحذير + م يتطلب ملفات سويته لكم داتا مؤقت
-سو روم بأسم log 
-أو غيره من الكود عشان يرسل هنا التحذير
-nvm i 10 
-nvm use 10
-npm i discord.js
-*/
-var guilds = {};
-client.on('guildBanAdd', function(guild) {
-            const rebellog = client.channels.find("name", "log"),
-            Onumber = 3,
-  Otime = 10000
-guild.fetchAuditLogs({
-    type: 22
-}).then(audit => {
-    let banner = audit.entries.map(banner => banner.executor.id)
-    let bans = guilds[guild.id + banner].bans || 0 
-    guilds[guild.id + banner] = {
-        bans: 0
-    }
-      bans[guilds.id].bans += 1; 
-if(guilds[guild.id + banner].bans >= Onumber) {
-try {
-let roles = guild.members.get(banner).roles.array();
-guild.members.get(banner).removeRoles(roles);
-  guild.guild.member(banner).kick();
 
-} catch (error) {
-console.log(error)
-try {
-guild.members.get(banner).ban();
-  rebellog.send(`<@!${banner.id}>
-حآول العبث بالسيرفر @everyone`);
-guild.owner.send(`<@!${banner.id}>
-حآول العبث بالسيرفر ${guild.name}`)
-    setTimeout(() => {
- guilds[guild.id].bans = 0;
-  },Otime)
-} catch (error) {
-console.log(error)
-}
-}
-}
-})
+
+
+client.on('ready', function(){
+    client.user.setStatus("dnd");
+    var ms = 7000 ;
+    var setGame = [`Spomi Army`,`Just Smile ☺`,`Shelp`];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+       if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/KiNg66S`);
+    }, ms);7000
+
 });
- let channelc = {};
-  client.on('channelCreate', async (channel) => {
-  const rebellog = client.channels.find("name", "look"),
-  Oguild = channel.guild,
-  Onumber = 3,
-  Otime = 10000;
-  const audit = await channel.guild.fetchAuditLogs({limit: 1});
-  const channelcreate = audit.entries.first().executor;
-  console.log(` A ${channel.type} Channel called ${channel.name} was Created By ${channelcreate.tag}`);
-   if(!channelc[channelcreate.id]) {
-    channelc[channelcreate.id] = {
-    created : 0
-     }
- }
- channelc[channelcreate.id].created += 1;
- if(channelc[channelcreate.id].created >= Onumber ) {
-    Oguild.members.get(channelcreate.id).kick();
-rebellog.send(`<@!${channelcreate.id}>
-حآول العبث بالسيرفر @everyone`);
-channel.guild.owner.send(`<@!${channelcreate.id}>
-حآول العبث بالسيرفر ${channel.guild.name}`)
+
+
+
+
+
+
+const config = require('./configs.json');
+
+
+const size    = config.colors;
+const rainbow = new Array(size);
+
+for (var i=0; i<size; i++) {
+  var red   = sin_to_hex(i, 0 * Math.PI * 2/3); // 0   deg
+  var blue  = sin_to_hex(i, 1 * Math.PI * 2/3); // 120 deg
+  var green = sin_to_hex(i, 2 * Math.PI * 2/3); // 240 deg
+
+  rainbow[i] = '#'+ red + green + blue;
 }
-  setTimeout(() => {
- channelc[channelcreate.id].created = 0;
-  },Otime)
-  });
 
-let channelr = {};
-  client.on('channelDelete', async (channel) => {
-  const rebellog = client.channels.find("name", "log"),
-  Oguild = channel.guild,
-  Onumber = 3,
-  Otime = 10000;
-  const audit = await channel.guild.fetchAuditLogs({limit: 1});
-  const channelremover = audit.entries.first().executor;
-  console.log(` A ${channel.type} Channel called ${channel.name} was deleted By ${channelremover.tag}`);
-   if(!channelr[channelremover.id]) {
-    channelr[channelremover.id] = {
-    deleted : 0
-     }
- }
- channelr[channelremover.id].deleted += 1;
- if(channelr[channelremover.id].deleted >= Onumber ) {
-  Oguild.guild.member(channelremover).kick();
-rebellog.send(`<@!${channelremover.id}>
-حآول العبث بالسيرفر @everyone`);
-channel.guild.owner.send(`<@!${channelremover.id}>
-حآول العبث بالسيرفر ${channel.guild.name}`)
+function sin_to_hex(i, phase) {
+  var sin = Math.sin(Math.PI / size * 2 * i + phase);
+  var int = Math.floor(sin * 127) + 128;
+  var hex = int.toString(16);
+
+  return hex.length === 1 ? '0'+hex : hex;
 }
-  setTimeout(() => {
- channelr[channelremover.id].deleted = 0;
-  },Otime)
-  });
 
+let place = 0;
+const servers = config.servers;
 
-client.on('message', message => { if (message.author.bot) return; if (message.content === prefix + "help") { 		 message.channel.send('**The Message Was Sent On Private**'); 	 		 message.author.sendMessage(` ** __~~The ARAB GAMER ~~__ By: Spomi : 9954 
-╔[❖════════════❖]╗ Prefix = ×
-creat un room avec le nom look
-creat one room name look 
-سوي روم بإسم look
-For add Bot : لدعوت البوت 
-https://discordapp.com/oauth2/authorize?client_id=469353155335946240&permissions=8&scope=bot
-×invite :msg prv avec invite 
-https://discordapp.com/oauth2/authorize?client_id=469353155335946240&permissions=8&scope=bot
-================================================================== `); } });
-
-
-
-client.on('message', message => {
-if(message.content.startsWith(prefix + "invite")) { 
-message.author.send(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2080374975`);
+function changeColor() {
+  for (let index = 0; index < servers.length; ++index) {        
+    client.guilds.get(servers[index]).roles.find('name', config.roleName).setColor(rainbow[place])
+        .catch(console.error);
+        
+    
+    
+    if(place == (size - 1)){
+      place = 0;
+    }else{
+      place++;
+    }
+  }
 }
+
+
+
+client.on('ready', () => {
+  console.log('Bot Is Online')
+  if(config.speed <10000){console.log("The minimum speed is 60.000, if this gets abused your bot might get IP-banned"); process.exit(1);}
+  setInterval(changeColor, config.speed);
 });
 
 
