@@ -10,7 +10,7 @@ client.on('ready', () => {
 client.on('ready', function(){
     client.user.setStatus("dnd");
     var ms = 7000 ;
-    var setGame = [`Spomi Army`,`Just Smile ☺`,`Shelp`];
+    var setGame = [`.clan info`,`Just Smile ☺`,`.clan`];
     var i = -1;
     var j = 0;
     setInterval(function (){
