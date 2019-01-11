@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = '%'
+const prefix = '÷'
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -32,7 +32,7 @@ client.user.setGame(`%help`,"http://twitch.tv/S-F")
         
  
 client.on('message', message => {
-    if (message.content.startsWith("%avatar")) {
+    if (message.content.startsWith("÷avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
       if(mentionned){
@@ -51,8 +51,8 @@ client.on('message', message => {
   
 
 client.on('message',async Epic => {
-  var codes = "%";
-  if(Epic.content.startsWith(codes + "voicelive")) {
+  var codes = "÷";
+  if(Epic.content.startsWith(codes + "voiceset")) {
   if(!Epic.guild.member(Epic.author).hasPermissions('MANAGE_CHANNELS')) return Epic.reply(':x: **ليس لديك الصلاحيات الكافية**');
   if(!Epic.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS','MANAGE_ROLES_OR_PERMISSIONS'])) return Epic.reply(':x: **ليس معي الصلاحيات الكافية**');
   Epic.guild.createChannel(`Voice Online : [ ${Epic.guild.members.filter(m => m.voiceChannel).size} ]` , 'voice').then(c => {
@@ -75,10 +75,9 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 	
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 :earth_africa: The Public Commands :earth_africa: 
-%voicelive  <----- To Show Number peaple in voice chanels
-%image      <----- For Show your image account 
-%invite     <-----  Commend To add Bot or 👇 click in Thes Link 👇
-https://discordapp.com/oauth2/authorize?&client_id=468775148217040921&scope=bot&permissions=12659727
+÷voiceset    <----- To Show Number peaple in voice chanels
+÷avatar      <----- For Show your image account 
+÷bc          <-----  Send SMS For All Users In Your Server 
 
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
    `]
@@ -185,7 +184,7 @@ client.on('message', msg => {
 client.on('message', message => {
             if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
-if (message.content.startsWith('%bcall')){
+if (message.content.startsWith('÷bcall')){
  if(!message.author.id === '281762317522305024') return;
 message.channel.sendMessage(' جار ارسال الرسالة | ✅')
 client.users.forEach(m =>{
@@ -193,6 +192,56 @@ m.sendMessage(args)
 })
 }
 });
+
+client.on('ready', function(){
+    client.user.setStatus("dnd");
+    var ms = 5000 ;
+    var setGame = [`÷help <-- For info`,`LORD ▄︻̷̿┻̿═━ GAMER`];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i],`http://www.twitch.tv/KiNg66S`);
+    }, ms);4000
+
+});
+
+
+client.on('message', message => {
+var prefix = "÷";
+
+    if (message.author.id === client.user.id) return;
+    if (message.guild) {
+   let embed = new Discord.RichEmbed()
+    let args = message.content.split(' ').slice(1).join(' ');
+if(message.content.split(' ')[0] == prefix + 'bc') {
+    if (!args[1]) {
+message.channel.send("**0bc <message>**");
+return;
+}
+        message.guild.members.forEach(m => {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
+            var bc = new Discord.RichEmbed()
+            .addField('» السيرفر :', `${message.guild.name}`)
+            .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
+            .addField(' » الرسالة : ', args)
+            .setColor('RANDOM')
+            // m.send(`[${m}]`);
+            m.send(`${m}`,{embed: bc});
+        });
+    }
+    } else {
+        return;
+    }
+});
+
+
 
 
 
