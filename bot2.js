@@ -245,4 +245,4 @@ return;
 
 
 
-client.login(process.env.BOT2_TOKEN);
+client.login(process.env.BOT20_TOKEN);
