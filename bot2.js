@@ -196,7 +196,7 @@ m.sendMessage(args)
 client.on('ready', function(){
     client.user.setStatus("dnd");
     var ms = 5000 ;
-    var setGame = [`÷help <-- For info`,`LORD ▄︻̷̿┻̿═━ GAMER`];
+    var setGame = [`÷help <-- For info`,`The X Zone`];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -228,9 +228,9 @@ return;
         message.guild.members.forEach(m => {
    if(!message.member.hasPermission('ADMINISTRATOR')) return;
             var bc = new Discord.RichEmbed()
-            .addField('» السيرفر :', `${message.guild.name}`)
-            .addField('» المرسل : ', `${message.author.username}#${message.author.discriminator}`)
-            .addField(' » الرسالة : ', args)
+            .addField('» Server :', `${message.guild.name}`)
+            .addField('» by : ', `${message.author.username}#${message.author.discriminator}`)
+            .addField(' » Msg : ', args)
             .setColor('RANDOM')
             // m.send(`[${m}]`);
             m.send(`${m}`,{embed: bc});
