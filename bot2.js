@@ -75,9 +75,9 @@ if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send
 	
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 :earth_africa: The Public Commands :earth_africa: 
-÷voiceset    <----- To Show Number peaple in voice chanels
+÷voiceset    <----- To see  Who much callers in voice chanels
 ÷avatar      <----- For Show your image account 
-÷bc          <-----  Send SMS For All Users In Your Server 
+÷bc          <-----  Send SMS For All Members In Your Server 
 
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
    `]
